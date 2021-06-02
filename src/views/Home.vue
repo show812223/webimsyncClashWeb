@@ -1,18 +1,24 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+<div>
+  <ClashManage v-if="isManager"/>
+  <ClashInfo v-else/>
+</div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import ClashInfo from "../components/ClashInfo";
+import ClashManage from "../components/ClashManage";
 
 export default {
   name: 'Home',
-  components: {
-    HelloWorld
+  components: { ClashInfo, ClashManage },
+  data(){
+    return {
+      isManager:true
+    }
+  },
+  async mounted() {
+    this.isManager = await clashDataObject.checkIsManager()
   }
 }
 </script>
