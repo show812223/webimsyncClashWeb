@@ -1,24 +1,26 @@
 <template>
-<div>
-  <ClashManage v-if="isManager"/>
-  <ClashInfo v-else/>
-</div>
+    <sb-clash-manage v-if="isManager" />
+    <sb-clash-info v-else :isPublishedPage="true"/>
 </template>
 
 <script>
-import ClashInfo from "../components/ClashInfo";
-import ClashManage from "../components/ClashManage";
-
+import { mapGetters } from "vuex";
 export default {
-  name: 'Home',
-  components: { ClashInfo, ClashManage },
-  data(){
-    return {
-      isManager:true
+  name: "Home",
+  data() {
+    return {};
+  },
+  computed: {
+    ...mapGetters("auth", ["functions"]),
+    isManager() {
+      console.log(this.$store.state.project.functions);
+      return this.$store.state.project.functions.includes(
+        "Project.Clash.Management.Update"
+      );
     }
   },
   async mounted() {
-    this.isManager = await clashDataObject.checkIsManager()
+    console.log("Home isManager", this.isManager);
   }
-}
+};
 </script>

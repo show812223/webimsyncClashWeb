@@ -7,6 +7,7 @@ Vue.use(Vuetify)
 
 export default new Vuetify({
   theme: {
+    dark: true,
     options: {
       customProperties: true
     },
@@ -23,7 +24,11 @@ export default new Vuetify({
         skyBlue: '#83A8C1',
         grey: '#EEEEEE',
         white: '#FFFFFF'
-      }
+      },
+      dark:{
+        backgroundBlue: "#8597b1",
+        grey: "#6a6a6a",
+    }
     }
   },
   lang: {

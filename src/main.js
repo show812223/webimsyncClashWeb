@@ -21,7 +21,7 @@ Vue.config.productionTip = false
 //   token: localStorage.getItem('oidc_access_token')
 // }
 Vue.use(shared, { store, router })
-Vue.use(clash)
+Vue.use(clash,{store})
 
 new Vue({
   router,
