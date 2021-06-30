@@ -1,6 +1,6 @@
 <template>
-    <sb-clash-manage v-if="isManager" />
-    <sb-clash-info v-else :isPublishedPage="true"/>
+  <sb-clash-manage v-if="isManager" />
+  <sb-clash-info v-else :isPublishedPage="true" />
 </template>
 
 <script>
@@ -12,6 +12,7 @@ export default {
   },
   computed: {
     ...mapGetters("auth", ["functions"]),
+    ...mapGetters("clash", ["isWeBIMSync"]),
     isManager() {
       console.log(this.$store.state.project.functions);
       return this.$store.state.project.functions.includes(
@@ -21,6 +22,12 @@ export default {
   },
   async mounted() {
     console.log("Home isManager", this.isManager);
+
+    window.showJsMessage = this.test
+   
+  },
+  methods:{
+ 
   }
 };
 </script>
