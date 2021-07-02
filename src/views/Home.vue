@@ -1,6 +1,6 @@
 <template>
-  <sb-clash-manage v-if="isManager" />
-  <sb-clash-info v-else :isPublishedPage="true" />
+  <sb-clash-management v-if="isManager" />
+  <sb-clash-review v-else :isPublishedPage="true" />
 </template>
 
 <script>
