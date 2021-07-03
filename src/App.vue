@@ -79,7 +79,7 @@ export default {
       if(typeof(data) == 'string'){
         data = JSON.parse(e)
       }
-      this.$store.state.clash.currentModelSetInfos = data.data.data
+      this.$store.state.clash.currentModelSetInfos = data
       console.log("currentModelSetInfos", this.$store.state.clash.currentModelSetInfos);
     }
   }
