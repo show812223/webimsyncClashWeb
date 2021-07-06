@@ -109,4 +109,12 @@ export default {
 ::-webkit-scrollbar-thumb:hover {
   background: white;
 }
+
+.v-card.v-sheet.theme--dark{
+border-color:#2196f3
+}
+
+.v-menu__content.theme--dark.menuable__content__active{
+  border: solid 1px #2196f3;
+}
 </style>
