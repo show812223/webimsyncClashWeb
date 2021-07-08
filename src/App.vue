@@ -111,7 +111,7 @@ export default {
 }
 
 .v-card.v-sheet.theme--dark{
-border-color:#2196f3
+border-color:solid 1px #2196f3;
 }
 
 .v-menu__content.theme--dark.menuable__content__active{
