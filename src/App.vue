@@ -46,6 +46,7 @@ export default {
     window.setClashSet = this.setClashSet
     window.setCurrentModelSetInfos = this.setCurrentModelSetInfos
     window.switchLoading = this.switchLoading
+    window.setI18n = this.setI18n
     await CefSharp.BindObjectAsync("clashDataObject");
     this.$store.state.clash.isWeBIMSync = await clashDataObject.checkIsWeBIMSync();
     var data = await clashDataObject.checkIsManager();
@@ -57,10 +58,21 @@ export default {
     this.$store.state.layout.paddingNumber = 0;
 
     
+    this.steLanguage()
+    
     
   },
   methods:{
     ...mapActions("clash",["setCurrentClashSet"]),
+    steLanguage(){
+      var language = navigator.language
+      if(language == 'en'){
+        this.$vuetify.lang.current = 'en'
+      }
+      if(language == 'zh-TW'){
+        this.$vuetify.lang.current = 'zh-Hant'
+      }
+    },
     switchLoading(e){
       this.dialog = e
     },
@@ -81,6 +93,9 @@ export default {
       }
       this.$store.state.clash.currentModelSetInfos = data
       console.log("currentModelSetInfos", this.$store.state.clash.currentModelSetInfos);
+    },
+    setI18n(i18nString){
+      this.$root.$i18n.locale = i18nString
     }
   }
 };
