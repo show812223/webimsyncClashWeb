@@ -9,7 +9,7 @@ export default [
     subMenuItems: [],
     meta: {
       type: "project",
-      functions: ["Project.Clash.Review.Read"],
+      functions: ["Zone.Clash.Review.Read"],
     },
   },
 ]

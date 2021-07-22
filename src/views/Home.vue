@@ -16,7 +16,7 @@ export default {
     isManager() {
       console.log(this.$store.state.project.functions);
       return this.$store.state.project.functions.includes(
-        "Project.Clash.Management.Update"
+        "Zone.Clash.Management.Update"
       );
     }
   },
