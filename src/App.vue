@@ -58,15 +58,15 @@ export default {
     this.$store.state.layout.paddingNumber = 0;
 
     
-    this.steLanguage()
+    this.setLanguage()
     
     
   },
   methods:{
     ...mapActions("clash",["setCurrentClashSet"]),
-    steLanguage(){
+    setLanguage(){
       var language = navigator.language
-      if(language == 'en'){
+      if(language == 'en-US'){
         this.$vuetify.lang.current = 'en'
       }
       if(language == 'zh-TW'){
