@@ -53,12 +53,13 @@ export default {
     this.$store.state.project.functions = data;
     var userId = await clashDataObject.getUserId();
     this.$store.state.auth.userInfo = {id:userId}
+    this.setLanguage()
     this.isShow = true;
     this.$store.state.layout.isFooterVisible = false;
     this.$store.state.layout.paddingNumber = 0;
 
     
-    this.setLanguage()
+    
     
     
   },
@@ -68,10 +69,13 @@ export default {
       var language = navigator.language
       if(language == 'en-US'){
         this.$vuetify.lang.current = 'en'
+        this.$i18n.locale = "en"
       }
       if(language == 'zh-TW'){
         this.$vuetify.lang.current = 'zh-Hant'
+        this.$i18n.locale = "zh-Hant"
       }
+      console.log("this.$vuetify.lang.current",this.$vuetify.lang.current);
     },
     switchLoading(e){
       this.dialog = e
