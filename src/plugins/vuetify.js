@@ -1,7 +1,8 @@
 // src/plugins/vuetify.js
 import Vue from 'vue'
-import Vuetify from 'vuetify/lib'
+import Vuetify from 'vuetify'
 import zhHant from 'vuetify/es5/locale/zh-Hant'
+import 'vuetify/dist/vuetify.min.css'
 
 Vue.use(Vuetify)
 

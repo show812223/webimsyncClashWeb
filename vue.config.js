@@ -1,11 +1,11 @@
-var webpack = require("webpack")
+// var webpack = require("webpack")
 // const VuetifyLoaderPlugin = require("vuetify-loader/lib/plugin");
 // const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
 //   .BundleAnalyzerPlugin;
 // const LodashWebpackPlugin = require("lodash-webpack-plugin")
 module.exports = {
   lintOnSave: false,
-  transpileDependencies: ['vuetify'],
+  // transpileDependencies: ['vuetify'],
 
   configureWebpack: {
     plugins: [

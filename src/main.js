@@ -5,11 +5,11 @@ import store from './store'
 import i18n from './i18n'
 import vuetify from './plugins/vuetify'
 
-import shared from 'syncobox-shared'
-import 'syncobox-shared/dist/syncobox-shared.css'
+import shared from '@syncobox/syncobox-shared'
+import "@syncobox/syncobox-shared/dist/syncobox-shared.css"
 
-import clash from 'syncobox-clash'
-import 'syncobox-clash/dist/syncobox-clash.css'
+import clash from '@syncobox/syncobox-clash'
+import '@syncobox/syncobox-clash/dist/syncobox-clash.css'
 
 Vue.config.productionTip = false
 // const apiConfig = {
@@ -22,6 +22,12 @@ Vue.config.productionTip = false
 // }
 Vue.use(shared, { store, router })
 Vue.use(clash,{store})
+
+//shared-ui
+import syncoboxSharedUi from "@syncobox/syncobox-shared-ui";
+import "@syncobox/syncobox-shared-ui/dist/syncobox-shared-ui.css";
+Vue.use(syncoboxSharedUi, { store: store });
+
 
 new Vue({
   router,
